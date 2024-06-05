@@ -3,7 +3,7 @@
     [
       "@babel/preset-env",
       {
-        "targets": "> 1%",
+        "targets": "last 2 versions, > 1%",
         // "transform-feature": {
         //   "edge": "17",
         //   "firefox": "60",
@@ -17,3 +17,4 @@
     ]
   ]
 }
+
