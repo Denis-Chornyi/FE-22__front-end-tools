@@ -1,3 +1,5 @@
+import "core-js/modules/es.array.sort.js";
+import "core-js/modules/web.dom-collections.iterator.js";
 import { getItem } from "./storage.js";
 const listElem = document.querySelector(".list");
 const compareTasks = (a, b) => {
@@ -9,10 +11,11 @@ const compareTasks = (a, b) => {
   }
   return new Date(b.createDate) - new Date(a.createDate);
 };
-const createCheckbox = ({
-  done,
-  id
-}) => {
+const createCheckbox = _ref => {
+  let {
+    done,
+    id
+  } = _ref;
   const checkboxElem = document.createElement("input");
   checkboxElem.setAttribute("type", "checkbox");
   checkboxElem.setAttribute("data-id", id);
@@ -20,11 +23,12 @@ const createCheckbox = ({
   checkboxElem.classList.add("list-item__checkbox");
   return checkboxElem;
 };
-const createListItem = ({
-  text,
-  done,
-  id
-}) => {
+const createListItem = _ref2 => {
+  let {
+    text,
+    done,
+    id
+  } = _ref2;
   const listItemElem = document.createElement("li");
   listItemElem.classList.add("list-item", "list__item");
   const checkboxElem = createCheckbox({
