@@ -11,4 +11,3 @@ const profile = {
 };
 
 printProfile(profile);
-//
