@@ -1,6 +1,4 @@
-export default async function fetchUser(userId) {
-  console.log('implementation for fetchUser');
-
+export async function fetchUser(userId) {
   try {
     const response = await fetch(`https://api.github.com/users/${userId}`);
     return await response.json();

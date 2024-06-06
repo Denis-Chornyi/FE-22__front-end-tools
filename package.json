@@ -1,11 +1,11 @@
 {
-  "name": "task1",
+  "name": "task2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-   "build:scripts": "webpack --mode=production",
-   "watch:scripts": "webpack --mode=development --devtool eval-source-map -w"
+    "build": "webpack --mode=production",
+    "watch": "webpack ./src/profile/index.js --mode=development --devtool eval-source-map -w"
   },
   "keywords": [],
   "author": "",
@@ -15,4 +15,3 @@
     "webpack-cli": "^5.1.4"
   }
 }
-
