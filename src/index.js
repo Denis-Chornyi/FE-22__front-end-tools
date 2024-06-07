@@ -1,9 +1,20 @@
-import renderProfile from './profile/renderProfile';
-import './index.css';
+import { printProfile } from './profile.js';
 
-const profileData = {
+const userData = {
   name: 'Tom',
-  location: 'The World',
+  age: 17,
 };
 
-renderProfile(profileData);
+const profile = {
+  ...userData,
+  company: 'Gromcode',
+};
+
+printProfile(profile);
+
+const data = [1, 2, [3, 4, [5, 6]]];
+
+const result = data.flat(2);
+console.log(result);
+
+Promise.resolve().finally();
