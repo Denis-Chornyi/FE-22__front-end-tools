@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
       })
     ],
     devServer: {
-      port: 9000,
+      port: 7777,
       hot: true
     }
   };

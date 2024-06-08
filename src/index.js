@@ -1,9 +1,21 @@
-import renderProfile from './profile/renderProfile';
-import './index.css';
+import { initTodoListHandlers } from './list/todoList.js';
+import { renderTasks } from './list/renderer.js';
+import { getTasksList } from './list/tasksGateway.js';
+import { setItem } from './list/storage.js';
+import './index.scss'
 
-const profileData = {
-  name: 'Tom',
-  location: 'The World',
+document.addEventListener('DOMContentLoaded', () => {
+  getTasksList().then(tasksList => {
+    setItem('tasksList', tasksList);
+    renderTasks();
+  });
+  initTodoListHandlers();
+});
+
+const onStorageChange = e => {
+  if (e.key === 'tasksList') {
+    renderTasks();
+  }
 };
 
-renderProfile(profileData);
+window.addEventListener('storage', onStorageChange);
