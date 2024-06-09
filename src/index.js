@@ -1,21 +1,14 @@
-import { initTodoListHandlers } from './list/todoList.js';
-import { renderTasks } from './list/renderer.js';
-import { getTasksList } from './list/tasksGateway.js';
-import { setItem } from './list/storage.js';
-import './index.scss'
+import printProfile from './renderProfile.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  getTasksList().then(tasksList => {
-    setItem('tasksList', tasksList);
-    renderTasks();
-  });
-  initTodoListHandlers();
-});
-
-const onStorageChange = e => {
-  if (e.key === 'tasksList') {
-    renderTasks();
-  }
+const userData = {
+  name: 'Tom',
+  age: 17
 };
 
-window.addEventListener('storage', onStorageChange);
+const profile = {
+  ...userData,
+  company: 'Gromcode'
+};
+
+printProfile(profile);
+
